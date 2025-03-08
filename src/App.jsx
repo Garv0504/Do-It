@@ -141,7 +141,7 @@ function App() {
           </button>
 
           <div className="mb-6 text-center">
-            <div className="w-16 h-16 rounded-full bg-gray-300 dark:bg-gray-700 mx-auto mb-4"><img src="/logo.png"/></div>
+            <div className="w-20 h-20 rounded-full bg-gray-300 dark:bg-gray-700 mx-auto mb-4 overflow-hidden"><img src="/profile.png"/></div>
             <h2 className="text-lg font-semibold">Hey, {username}</h2>
           </div>
 
