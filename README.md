@@ -38,3 +38,15 @@ Make sure you have the following installed:
 ```bash
 git clone https://github.com/your-username/doit-task-app.git
 cd doit-task-app
+
+
+/doit-task-app
+│── /src
+│   ├── /components  # UI Components (TaskInput, TaskList, etc.)
+│   ├── /store       # Redux store and slices
+│── /public          # Static files (favicons, images)
+│   ├── /data        # Local JSON data
+│── App.jsx          # Main application file
+│── index.js         # Entry point
+│── package.json     # Dependencies & scripts
+│── README.md        # Documentation
