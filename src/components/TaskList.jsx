@@ -23,7 +23,7 @@ const TaskList = ({ filter, darkMode }) => {
         try {
           const response = await fetch("/data.json");
           const data = await response.json();
-          localStorage.setItem("tasks", JSON.stringify(data.user));
+          localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("tasks", JSON.stringify(data.tasks));
           dispatch(setTasks(data)); 
         } catch (error) {
