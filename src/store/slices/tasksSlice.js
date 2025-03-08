@@ -10,7 +10,7 @@ const tasksSlice = createSlice({
   reducers: {
     setTasks: (state, action) => {
       state.items = action.payload;
-      localStorage.setItem("tasks", JSON.stringify(action.payload)); // Update localStorage
+      localStorage.setItem("tasks", JSON.stringify(action.payload));
     },
     addTask: (state, action) => {
       state.items.push(action.payload);

@@ -19,13 +19,16 @@ const TaskList = ({ filter, darkMode }) => {
   useEffect(() => {
     const loadData = async () => {
       const storedTasks = localStorage.getItem("tasks");
-      if (!storedTasks) {
+  
+      if (!storedTasks || storedTasks === "[]") { 
         try {
           const response = await fetch("/data.json");
           const data = await response.json();
+  
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("tasks", JSON.stringify(data.tasks));
-          dispatch(setTasks(data)); 
+          
+          dispatch(setTasks(data.tasks));
         } catch (error) {
           console.error("Error loading data:", error);
         }
@@ -33,9 +36,10 @@ const TaskList = ({ filter, darkMode }) => {
         dispatch(setTasks(JSON.parse(storedTasks))); 
       }
     };
-
+  
     loadData();
   }, [dispatch]);
+  
 
   const activeTasks = filteredTasks.filter((task) => !task.completed);
   const completedTasks = filteredTasks.filter((task) => task.completed);
