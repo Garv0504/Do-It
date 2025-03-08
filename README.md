@@ -1,4 +1,4 @@
-# **DoIt - Task Management App**  
+# **Do It - Task Management App**  
 
 A simple, interactive task management app built with **React.js, Redux, Tailwind CSS, and Recharts**. The app supports **task filtering, dark mode, local storage persistence, and a sidebar navigation menu.**  
 
