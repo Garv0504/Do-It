@@ -8,6 +8,10 @@ const tasksSlice = createSlice({
     error: null,
   },
   reducers: {
+    setTasks: (state, action) => {
+      state.items = action.payload;
+      localStorage.setItem("tasks", JSON.stringify(action.payload)); // Update localStorage
+    },
     addTask: (state, action) => {
       state.items.push(action.payload);
       localStorage.setItem('tasks', JSON.stringify(state.items));
@@ -33,5 +37,5 @@ const tasksSlice = createSlice({
   },
 });
 
-export const { addTask, deleteTask, toggleTask, toggleStarTask } = tasksSlice.actions;
+export const { addTask, deleteTask, toggleTask, toggleStarTask, setTasks } = tasksSlice.actions;
 export default tasksSlice.reducer;

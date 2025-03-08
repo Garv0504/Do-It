@@ -1,0 +1,80 @@
+{
+    "user": {
+      "username": "gary"
+    },
+    "tasks": [
+      {
+        "id": "1",
+        "title": "Buy groceries",
+        "priority": "low",
+        "completed": false,
+        "starred": false,
+        "dueToday": false,
+        "planned": true
+      },
+      {
+        "id": "2",
+        "title": "Finish project report",
+        "priority": "medium",
+        "completed": false,
+        "starred": true,
+        "dueToday": true,
+        "planned": false
+      },
+      {
+        "id": "3",
+        "title": "Call the bank",
+        "priority": "high",
+        "completed": false,
+        "starred": true,
+        "dueToday": true,
+        "planned": false
+      },
+      {
+        "id": "4",
+        "title": "Schedule Dentist appointment",
+        "priority": "high",
+        "completed": false,
+        "starred": false,
+        "dueToday": true,
+        "planned": false
+      },
+      {
+        "id": "5",
+        "title": "Plan weekend trip",
+        "priority": "medium",
+        "completed": false,
+        "starred": false,
+        "dueToday": true,
+        "planned": false
+      },
+      {
+        "id": "6",
+        "title": "clean the house",
+        "priority": "medium",
+        "completed": true,
+        "starred": false,
+        "dueToday": true,
+        "planned": false
+      },
+      {
+        "id": "7",
+        "title": "prepare presentation",
+        "priority": "high",
+        "completed": false,
+        "starred": false,
+        "dueToday": true,
+        "planned": false
+      },
+      {
+        "id": "8",
+        "title": "update blog",
+        "priority": "medium",
+        "completed": true,
+        "starred": false,
+        "dueToday": false,
+        "planned": false
+      }
+    ]
+  }
+  

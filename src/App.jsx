@@ -30,12 +30,19 @@ function App() {
   const tasks = useSelector((state) => state.tasks.items);
   const dispatch = useDispatch();
 
+
+  const [user, setUser] = useState(null);
+  const [task, setTask] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("all");
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null); // Reference for sidebar
+
+
+  
 
   useEffect(() => {
     localStorage.setItem("darkMode", darkMode);
@@ -57,6 +64,9 @@ function App() {
 
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
+
+
+ 
 
   if (!isAuthenticated) {
     return <Login />;
@@ -131,7 +141,7 @@ function App() {
           </button>
 
           <div className="mb-6 text-center">
-            <div className="w-16 h-16 rounded-full bg-gray-300 dark:bg-gray-700 mx-auto mb-4"><img src="src/logo.png"/></div>
+            <div className="w-16 h-16 rounded-full bg-gray-300 dark:bg-gray-700 mx-auto mb-4"><img src="/logo.png"/></div>
             <h2 className="text-lg font-semibold">Hey, {username}</h2>
           </div>
 

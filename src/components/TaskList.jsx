@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect }from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Star, CheckCircle, Circle } from 'lucide-react';
-import { deleteTask, toggleTask, toggleStarTask } from '../store/slices/tasksSlice';
+import { deleteTask, toggleTask, toggleStarTask, setTasks } from '../store/slices/tasksSlice';
 
 const TaskList = ({ filter, darkMode }) => {
   const tasks = useSelector((state) => state.tasks.items);
@@ -15,6 +15,27 @@ const TaskList = ({ filter, darkMode }) => {
     if (filter === "assigned") return task.assignedToMe;
     return true;
   });
+
+  useEffect(() => {
+    const loadData = async () => {
+      const storedTasks = localStorage.getItem("tasks");
+      if (!storedTasks) {
+        try {
+          const response = await fetch("/data.json");
+          const data = await response.json();
+          localStorage.setItem("tasks", JSON.stringify(data.user));
+          localStorage.setItem("tasks", JSON.stringify(data.tasks));
+          dispatch(setTasks(data)); 
+        } catch (error) {
+          console.error("Error loading data:", error);
+        }
+      } else {
+        dispatch(setTasks(JSON.parse(storedTasks))); 
+      }
+    };
+
+    loadData();
+  }, [dispatch]);
 
   const activeTasks = filteredTasks.filter((task) => !task.completed);
   const completedTasks = filteredTasks.filter((task) => task.completed);
